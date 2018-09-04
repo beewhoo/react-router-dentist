@@ -1,16 +1,30 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom';
+
+import Home from './Home';
+import Procedures from './Procedures';
+import Contact from './Contact';
+
+
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <Router>
+        <div className="App">
 
-      <h1>Dentist Website</h1>
-       <p>
-         Welcome to my dentist website.
-       </p>
-      </div>
+          <Route  path="/" component={Home} />
+          <Route exact path="/procedures" component={Procedures} />
+          <Route exact path="/contact" component={Contact} />
+
+
+        </div>
+      </Router>
     );
   }
 }
