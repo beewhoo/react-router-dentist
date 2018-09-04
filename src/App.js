@@ -18,7 +18,14 @@ class App extends Component {
       <Router>
         <div className="App">
 
-          <Route  path="/" component={Home} />
+        <nav>
+          <Link to="/">Go to Home Page</Link>{' '}
+          <Link to="/procedures">See Our Procedures</Link>{' '}
+          <Link to="/contact">Contact Us!</Link>
+        </nav>
+
+
+          <Route exact path="/" component={Home} />
           <Route exact path="/procedures" component={Procedures} />
           <Route exact path="/contact" component={Contact} />
 
